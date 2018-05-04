@@ -1,0 +1,70 @@
+---
+title: "Podsumowanie zajęć z TIPN"
+author: "Klaudia Grabowska"
+date: "1 maja 2018"
+output: 
+  html_document:
+    theme: spacelab
+    highlight: textmate 
+  df_print: paged  
+  
+---
+
+# Zajęcia z tipn.
+
+Od początku drugiego semstru I roku, na kierunku *Psychologia Zdrowia* odbywały się zajęcia z technologii informatycznych w pracy naukowej. Prowadził je Pan Basiński. Aby rozpocząć naukę na tym przedmiocie najpierw musieliśmy zainstalować na laptopach:
+
+1. RStudio
+2. Github
+
+## RStudio
+
+Praktycznie wszystkie zadania wykonywaliśmy w programie jakim jest rsudio. R jest językiem programowania. Za jego pomocą można z łatwością napisać artykuł naukowy, pracę licencjacką, a także zrobić analize statystyczną. My na zajęciach używaliśmy RStudio do:
+
++ robienia wykresów za pomocą paczki ggplot2
++ robienia i analizowania tabel za pomocą paczki dplyr
++ pisania w RMarkdown
++ i wiele innych :)
+
+Tu wrzucam link do oficjalnej strony RStudio po wiecej informacji:
+[Strona RStudio](https://www.rstudio.com/)
+
+## Github
+
+Co do Githuba- Wszystkie zadania, które **z trudem** udało nam sie zrobić wrzucaliśmy na github. Jest to miejsce, gdzie można dodwać wszystkie swoje dokumenty, prace, projekty w formie repozytorium. Jest on bardzo użyteczny i wygodny w pracy naukowej. 
+
+### Poniżej zamieszczam tabelę z moją subiektywną oceną powyższych zadań.
+
+*od 1 do 5*
+
+| RODZAJ ZADANIA | OCENA "FAJNOŚCI" | OCENA TRUDNOŚCI|
+| ---- | :----: | ----: |
+| wykresy | 5 | 2 |
+| tabelki | 3 | 3 |
+| rmarkdown | 4 | 2,5 |
+| github | 2 | 4 |
+ 
+Powyżej wymienione zadania, są niektórymi z wielu, które przerabialiśmy na zajęciach. Wypisałam te, które najbardziej zapadły mi w pamięć. 
+
+### Przykłady tego co udało mi się zrobić na zajęciach z tipn:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class, fill = class)) +
+  labs(title = "Klasy samochodów", x = "Klasa", y = "Liczebność")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+data(diamonds)
+select(diamonds, color)
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+for(year in 1800:2018) {
+  if(((year %% 4) == 0) & ((year %% 100) != 0) | ((year %% 400) == 0))
+    print(year)
+}
+```
+
